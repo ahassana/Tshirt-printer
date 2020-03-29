@@ -249,22 +249,7 @@ var line4;
 		});
 	
 		//canvas.add(new fabric.fabric.Object({hasBorders:true,hasControls:false,hasRotatingPoint:false,selectable:false,type:'rect'}));
-	   $("#drawingArea").hover(
-	        function() { 	        	
-	        	 canvas.add(line1);
-		         canvas.add(line2);
-		         canvas.add(line3);
-		         canvas.add(line4); 
-		         canvas.renderAll();
-	        },
-	        function() {	        	
-	        	 canvas.remove(line1);
-		         canvas.remove(line2);
-		         canvas.remove(line3);
-		         canvas.remove(line4);
-		         canvas.renderAll();
-	        }
-	    );
+	   
 	   
 	   $('.color-preview').click(function(){
 		   var color = $(this).css("background-color");
