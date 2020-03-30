@@ -72,7 +72,7 @@
 			width: 103px;
 			height: 103px;
 		}
-
+		
 	 </style>
   </head>
 
@@ -232,23 +232,38 @@
 <!-- Footer ================================================== -->
     <script>
         $(document).ready(function(){
-   $("#tshirttype").change(function(){
-	if($(this).val() !== "img/mug.jpg") {
-		$("canvas").css("width", 400);
-	 	$("canvas").css("height", 500)
-		 $("canvas").css("left", 0)
-		 $("canvas").css("top", 0)
-	 } else {
-		$("canvas").css("width", 200);
-	 	$("canvas").css("height", 250)
-		 $("canvas").css("left", 128)
-		 $("canvas").css("top", 115)
-	 }
-     $("img[name=tshirtview]").attr("src",$(this).val());
-	
-   });
+			$("#tshirttype").change(function(){
+				if($(this).val() !== "img/mug.jpg") {
+					if (screen.width <= 768) {
+						$("canvas").css("width", 200);
+						$("canvas").css("height", 300)
+						$("canvas").css("left", 19)
+						$("canvas").css("top", 0)
+					} else {
+						$("canvas").css("width", 400);
+						$("canvas").css("height", 500)
+						$("canvas").css("left", 0)
+						$("canvas").css("top", 0)
+					}
+				} else {
+					if(screen.width <= 768) {
+						$("canvas").css("width", 154);
+						$("canvas").css("height", 146)
+						$("canvas").css("left", 53)
+						$("canvas").css("top", 60)
+					} else {
+						$("canvas").css("width", 200);
+						$("canvas").css("height", 250)
+						$("canvas").css("left", 128)
+						$("canvas").css("top", 115)
+					}
+						
+				}
+				$("img[name=tshirtview]").attr("src",$(this).val());
+				
+			});
 
-});
+		});
     </script>
     <!-- Le javascript
     ================================================== -->
