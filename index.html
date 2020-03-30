@@ -108,7 +108,7 @@
 				                    <option value="img/crew_front.png" selected="selected">Short Sleeve Shirts</option>
 				                    <option value="img/mens_longsleeve_front.png">Long Sleeve Shirts</option>                                        
 				                    <option value="img/mens_hoodie_front.png">Hoodies</option>                    
-									<option value="img/mug.png">MUG</option>
+									<option value="img/mug.jpg">MUG</option>
 									<option value="img/phones/iPhone3A.png">Phone</option>
 								</select>	
 <!--						      </p>-->								
@@ -233,8 +233,19 @@
     <script>
         $(document).ready(function(){
    $("#tshirttype").change(function(){
+	if($(this).val() !== "img/mug.jpg") {
+		$("canvas").css("width", 400);
+	 	$("canvas").css("height", 500)
+		 $("canvas").css("left", 0)
+		 $("canvas").css("top", 0)
+	 } else {
+		$("canvas").css("width", 200);
+	 	$("canvas").css("height", 250)
+		 $("canvas").css("left", 128)
+		 $("canvas").css("top", 115)
+	 }
      $("img[name=tshirtview]").attr("src",$(this).val());
-
+	
    });
 
 });
